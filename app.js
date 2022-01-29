@@ -3,6 +3,7 @@ const https = require("https"); //the https module doesn't require installation,
 const bodyParser = require("body-parser");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -44,6 +45,6 @@ app.post("/", function(req, res){
     //res.send("Server is up and running."); //There can be only one send method.
 })
 
-app.listen(3000, function(){
-    console.log("Server is running at port 3000.");
+app.listen(port, function(){
+    console.log(`Server is running at port ${port}.`);
 })
